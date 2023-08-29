@@ -10,17 +10,10 @@
 int calcHeight(struct TreeNode* root);
 bool isBalanced(struct TreeNode* root){
     if (root!=NULL) {
-        if (root->left==NULL&&root->right == NULL){
-            return true;
-        }
         int left = calcHeight(root->left);
         int right = calcHeight(root->right);
-        printf("%d   %d\n",left,right);
-        if(abs(left-right)>=2){
-            return false;
-        } else {
-            return (isBalanced(root->left)&&isBalanced(root->right)); 
-        }
+        return (abs(left-right)<=1 && isBalanced(root->left)&&isBalanced(root->right)); 
+
     }
     return true;
 }
