@@ -29,10 +29,7 @@ char * addBinary(char * a, char * b){
     if (carry == 1) {
         ret[0] = '1';
     } else {
-        for (int i = 0;i<max+1;i++){
-            ret[i]=ret[i+1];
-        }
-        ret[max+1] = '\0';
+        return ret+1;
     }
     return ret;
 }
